@@ -1,11 +1,7 @@
 "use client"
 
 import React from 'react'
-import logo from '../../../public/logo.svg'
-import Image from 'next/image'
-import {BadgeDollarSign, Blocks, ChartNoAxesGantt, Files, House, MessageCircleWarning, ShoppingCart } from 'lucide-react'
-
-
+import {BadgeDollarSign, Blocks, ChartNoAxesGantt, ChevronLeft, ChevronRight, Files, House, MessageCircleWarning, ScanLine, ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -24,19 +20,22 @@ export const SideNav = () => {
             id:2,
             name:"Inventory",
             icon:<ChartNoAxesGantt />,
-            path:'/app/inventory'
+            path:'/app/inventory',
+            icon2:<ChevronRight width={20} height={20}/>
         },
         {
             id:3,
             name:"Sales",
             icon:<BadgeDollarSign />,
-            path:'/app/sales'
+            path:'/app/sales',
+            icon2:<ChevronRight width={20} height={20}/>
         },
         {
             id:4,
             name:"Purchases",
             icon:<ShoppingCart />,
-            path:'/app/purchases'
+            path:'/app/purchases',
+            icon2:<ChevronRight width={20} height={20}/>
         },
         {
           id:5,
@@ -58,45 +57,44 @@ export const SideNav = () => {
       }
     ]
   return (
-    <div className='h-screen flex flex-col justify-between items-center shadow-md bg-white dark:bg-slate-900'>
-   <Link
-   href='/'>
-   <Image
-       src={logo}
-       width={180}
-       height={50}
-       alt='logo'
-       className='mx-auto my-3  p-7 shadow-md'
-       /></Link>
-       <div className='mx-12 flex-1  my-36'>
+    <div className='h-screen flex flex-col justify-between items-center shadow-md bg-slate-50 dark:bg-slate-800'>
+
+      <Link href='#' className='flex text-2xl gap-2 items-center justify-center py-3  w-full dark:bg-slate-900'>
+      <ScanLine /> <span>Inventory</span>
+      </Link>
+
+       <div className='w-[90%] flex-1  my-24'>
          {
             menuList.map((menu,i)=>(
-             <Link
-             key={i}
-             href={menu.path}
-             className={`flex p-5 gap-2  rounded-lg my-2
-             ${path == menu.path && ' bg-purple-700'}
-             `}
+              <Link 
+              key={i}
+              href={menu.path}
+              className={`flex justify-between items-center dark:hover:bg-purple-600 
+               hover:bg-slate-100 rounded-lg my-2 px-2 ${path == menu.path && ' bg-purple-700 hover:bg-purple-700'}`}>
+
+            <div
+             className={`flex items-center p-5 gap-2`}
              >
-                {menu.icon} {menu.name}
-             </Link>
+              {menu.icon} {menu.name}    
+             </div>
+             <div className=''>
+              {
+                menu.icon2 && menu.icon2
+              }
+              </div>
+              </Link>
+           
             ))
          }
        </div>
 
-       <div className='flex justify-start items-center'>
-        <Image
-        src={logo}
-        width={35}
-        height={35}
-        alt='user'
-        className='rounded-full mx-4'
-        />
-       <div className='text-sm'>
-       <h2 className=''>username    familyname</h2>
-        <h2 className='truncate text-[10px]'>email</h2>
-       </div>
-       </div>
+      
+
+        <div className='flex text-2xl  items-center justify-center py-3  w-full dark:bg-slate-900'>
+        <ChevronLeft />
+        </div>
+     
+     
     </div>
   )
 }
