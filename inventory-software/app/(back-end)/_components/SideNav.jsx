@@ -1,20 +1,21 @@
 "use client"
 
 import React from 'react'
-import {BadgeDollarSign, Blocks, ChartNoAxesGantt, ChevronLeft, ChevronRight, Files, House, MessageCircleWarning, ScanLine, ShoppingCart } from 'lucide-react'
+import {BadgeDollarSign, ChartNoAxesGantt, ChevronLeft, ChevronRight, Files, House, MessageCircleWarning, ScanLine, ShoppingCart, Workflow } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
+import SubscriptionCard from '../_components/SubscriptionCard'
 
 export const SideNav = () => {
   const path = usePathname()
    
     const menuList = [
+     
         {
             id:1,
             name:"Home",
             icon:<House/>,
-            path:'/app/home/overview'
+            path:'/app/home/overview',
         },
         {
             id:2,
@@ -40,7 +41,7 @@ export const SideNav = () => {
         {
           id:5,
           name:"Integrations",
-          icon:<Blocks />,
+          icon:<Workflow />,
           path:'/app/integrations'
       },
       {
@@ -69,8 +70,8 @@ export const SideNav = () => {
               <Link 
               key={i}
               href={menu.path}
-              className={`flex justify-between items-center dark:hover:bg-purple-600 
-               hover:bg-slate-100 rounded-lg my-2 px-2 ${path == menu.path && ' bg-purple-700 hover:bg-purple-700'}`}>
+              className={`flex rounded-2xl justify-between items-center dark:hover:bg-slate-600 
+               hover:bg-slate-100 my-2 px-2 ${path == menu.path && ' bg-blue-700 '}`}>
 
             <div
              className={`flex items-center p-5 gap-2`}
@@ -87,7 +88,8 @@ export const SideNav = () => {
             ))
          }
        </div>
-
+         
+         <SubscriptionCard/>
       
 
         <div className='flex text-2xl  items-center justify-center py-3  w-full dark:bg-slate-900'>
