@@ -15,7 +15,7 @@ export function ModeToggle() {
 
   return (
     <button className={`w-fit p-2 rounded-md hover:scale-110 active:scale-100
-      duration-200 bg-gray-100 dark:bg-gray-400`} onClick={()=>{ 
+      duration-200 bg-gray-100 dark:bg-gray-200`} onClick={()=>{ 
         setTheme(theme == "dark" ? "light" : "dark" )
        
         }}>

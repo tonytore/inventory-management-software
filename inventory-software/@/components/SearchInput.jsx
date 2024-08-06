@@ -3,12 +3,13 @@ import React from 'react'
 
 const SearchInput = () => {
     return (
-      <>
+      <div >
          <Input
+          className="bg-gray-300 rounded-2xl"
           type="text" 
-          placeholder="Search Customer ..." />
+          placeholder=" Search Customer ..." />
         
-        </>
+        </div>
     )
 }
 
