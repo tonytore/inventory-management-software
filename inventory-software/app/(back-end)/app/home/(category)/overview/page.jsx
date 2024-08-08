@@ -1,12 +1,10 @@
-"use client"
 
-import { CreditCard, X } from 'lucide-react'
 import SaleActivityCard from '../overview/components/SaleActivityCard'
 import InventorySumCard from '../overview/components/InventorySumCard'
-import React, { useState } from 'react'
+import DashboardBanner from '../overview/components/DashboardBanner'
 
 const Overview = () => {
-  const [hidden, setHidden] = useState(false)
+  
 
   const salesActivity = [
     {
@@ -15,7 +13,7 @@ const Overview = () => {
       desc: "to be packed",
       color: "text-blue-600",
       href: "#",
-      borderColor: 'border-blue-600'
+      borderColor: 'hover:border-blue-600'
     },
     {
       number: 0,
@@ -23,7 +21,7 @@ const Overview = () => {
       desc: "to be shipped",
       color: "text-red-600",
       href: "#",
-      borderColor: 'border-red-600'
+      borderColor: 'hover:border-red-600'
     },
     {
       number: 0,
@@ -31,7 +29,7 @@ const Overview = () => {
       desc: "to be delivered",
       color: "text-green-600",
       href: "#",
-      borderColor: 'border-green-600'
+      borderColor: 'hover:border-green-600'
     },
     {
       number: 0,
@@ -39,7 +37,7 @@ const Overview = () => {
       desc: "to be invoiced",
       color: "text-orange-600",
       href: "#",
-      borderColor: 'border-orange-600'
+      borderColor: 'hover:border-orange-600'
     },
   ]
 
@@ -58,21 +56,7 @@ const Overview = () => {
   return (
     <div className='flex flex-col gap-3'>
 
-      <div className={`${hidden ? "hidden" : "grid grid-cols-12 gap-3  p-8 text-gray-900 bg-white relative"}`}>
-
-      
-      <CreditCard width={64} height={64}  className="col-span-3"/>
-      <div className='col-span-6'>
-        <h2 className='font-semibold text-xl'>Start accepting online payments</h2>
-        <p className='text-wrap'>Businesses are moving towards online payments as they're easy, secure and fast. Try them for your business today.</p>
-      </div>
-      <button className='col-span-2 uppercase rounded-xl p-1 text-white px-4 bg-blue-600'>Enable</button>
-      <button onClick={() => setHidden(true)} className='col-span-1 absolute top-3 right-3 hover:text-red-500 cursor-pointer'>
-          <X />
-        </button>
-     
-
-      </div>
+       <DashboardBanner/>
       <div className="grid grid-cols-12 gap-3 bg-blue-50 text-gray-500 p-8">
         <div className='lg:col-span-8 md:col-span-5 flex flex-col border border-gray-300 rounded-xl '>
           <div className='text-gray-600 border-b border-gray-300 bg-gray-200 text-xl p-3'>

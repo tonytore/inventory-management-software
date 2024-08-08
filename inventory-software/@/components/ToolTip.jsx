@@ -13,7 +13,8 @@ export function TooltipDemo() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button 
-          className="text-white bg-blue-700 font-medium rounded-xl text-sm p-2 text-center dark:bg-blue-600" variant="outline"><Plus/></Button>
+          className="text-white bg-blue-700 font-medium rounded-xl text-sm p-2 text-center dark:bg-blue-600" variant="outline">
+            <Plus/></Button>
         </TooltipTrigger>
         <TooltipContent>
           <p>Add to library</p>
