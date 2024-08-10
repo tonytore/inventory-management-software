@@ -28,7 +28,7 @@ export default function Layout({
         <div className="md:ml-64  flex flex-col bg-white   justify-between min-h-screen">
           <Header />
       
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 bg-sky-50">{children}</div>
         </div>
       </body>
       </ThemeProvider>

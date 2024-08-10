@@ -12,7 +12,7 @@ export default function Layout({
       <div className="flex flex-col w-full  min-h-screen">
      
           <div className="border-b border-gray-200 homeBg"><HomeNav/></div>
-          <div className="flex-1 bg-gray-50 dark:bg-gray-100 homeBg max-w-screen-2xl">{children}</div>
+          <div className="flex-1 bg-gray-50 dark:bg-sky-50 homeBg max-w-screen-2xl">{children}</div>
       
       </div>
   

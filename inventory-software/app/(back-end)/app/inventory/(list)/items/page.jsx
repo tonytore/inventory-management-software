@@ -33,13 +33,13 @@ const Items = () => {
     },
   ]
   return (
-    <div className='bg-gray-200'>
+    <div className=''>
       <FixedHeader/>
       <div className='flex flex-wrap p-9 items-center gap-3 m-8'>
       {
         optionalCard.map((item,i)=>{
           return (
-            <div className='flex flex-col shadow-md items-center gap-6 w-[600px] my-4 mx-4 p-8 text-center border text-gray-900 bg-white'>
+            <div key={i} className='flex flex-col shadow-md items-center gap-6 w-[600px] my-4 mx-4 p-8 text-center border text-gray-900 bg-white'>
             <h2 className='font-semibold'>{item.title}</h2>
             {item.icon}
             <p className='text-sm'>{item.desc}</p>

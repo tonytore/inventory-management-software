@@ -13,7 +13,7 @@ export const Header = () => {
 
 
   return (
-    <div className="flex p-3 dark:bg-gray-100 bg-sky-50 shadow-sm justify-between items-center px-8">
+    <div className="flex p-3 dark:bg-gray-100 bg-gray-100 shadow-sm justify-between items-center px-8">
       <div className="flex items-center gap-6">
         <ModeToggle  />
         <button><History width={20} height={20} /></button>
